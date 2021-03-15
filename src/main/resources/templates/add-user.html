@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MyFirstCRUD</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+<div>
+    <form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
+        <label for="name">Name</label>
+        <input type="text" th:field="*{firstName}" id="name" placeholder="Name">
+        <label for="lastName">LastName</label>
+        <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+        <label for="age">Age</label>
+        <input type="text" th:field="*{age}" id="age" placeholder="Age">
+        <input type="submit" value="Add User">
+    </form>
+</div>
+</body>
+</html>
