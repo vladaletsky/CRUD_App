@@ -14,7 +14,7 @@ public class UserPageController {
 
     private final UserService userService;
 
-    @GetMapping("/index")
+    @GetMapping("/")
     public String getAllUser(Model model) {
         model.addAttribute("users", userService.getAllUsers());
         return "index";
@@ -26,16 +26,16 @@ public class UserPageController {
         return "add-user";
     }
 
-    @PostMapping("/adduser")
+    @PostMapping("/add-user")
     public String addUser(User user) {
         userService.saveUser(user);
-        return "redirect:/index";
+        return "redirect:/";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") int id) {
         userService.deleteUser(id);
-        return "redirect:/index";
+        return "redirect:/";
     }
 
     @GetMapping("/edit-user-page/{id}")
@@ -46,13 +46,9 @@ public class UserPageController {
     }
 
     @PostMapping("/edit-user")
-    public String editUser(@RequestParam String firstName, @RequestParam String lastName, @RequestParam int age, User user) {
-        User myUser = userService.findById(user.getId());
-        myUser.setFirstName(user.getFirstName());
-        myUser.setLastName(user.getLastName());
-        myUser.setAge(user.getAge());
-        userService.saveUser(myUser);
-        return "redirect:/index";
+    public String editUser(@ModelAttribute User user) {
+        userService.editUser(user);
+        return "redirect:/";
     }
 
     @GetMapping("/search")

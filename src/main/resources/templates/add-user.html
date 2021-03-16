@@ -7,14 +7,15 @@
 </head>
 <body>
 <div>
-    <form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
+    <p></p>
+    <form action="#" th:action="@{/add-user}" th:object="${user}" method="post">
         <label for="name">Name</label>
         <input type="text" th:field="*{firstName}" id="name" placeholder="Name">
         <label for="lastName">LastName</label>
         <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
         <label for="age">Age</label>
         <input type="text" th:field="*{age}" id="age" placeholder="Age">
-        <input type="submit" value="Add User">
+        <input class="btn btn-outline-dark" type="submit" value="Add User">
     </form>
 </div>
 </body>

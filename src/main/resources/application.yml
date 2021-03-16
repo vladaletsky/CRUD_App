@@ -12,6 +12,6 @@ spring:
       ddl-auto: update # при запуске. Стратегия.
     show-sql: true # видимость в логе, какой запрос. Для обучения
     properties:
-      hiberante:
+      hibernate:
         format_sql: true
 

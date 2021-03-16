@@ -10,4 +10,6 @@ public interface UserService {
     void deleteUser(int id);
     User findById(int id);
     User searchUser(String name);
+
+    void editUser(User user);
 }
